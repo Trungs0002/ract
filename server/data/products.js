@@ -1,4 +1,4 @@
-const products = [
+const items = [
   {
     id: 1,
     name: 'Laptop Dell XPS 13',
@@ -38,15 +38,7 @@ const products = [
     category: 'Clothing',
     image: '/images/tshirt.jpg',
     description: 'Cotton sports t-shirt'
-  },
-  {
-    id: 6,
-    name: 'Samsung TV 55',
-    price: 799.99,
-    category: 'Electronics',
-    image: '/images/tv.jpg',
-    description: '4K Smart TV'
   }
 ];
 
-module.exports = products;
+module.exports = items;

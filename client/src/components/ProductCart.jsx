@@ -9,7 +9,7 @@ const ProductCart = ({ cartItems, onRemoveFromCart, isOpen, onClose }) => {
       <div className="cart-content">
         <div className="cart-header">
           <h2>Shopping Cart</h2>
-          <button className="close-btn" onClick={onClose}>?</button>
+          <button className="close-btn" onClick={onClose} aria-label="Close cart">&times;</button>
         </div>
         <div className="cart-items">
           {cartItems.length === 0 ? (

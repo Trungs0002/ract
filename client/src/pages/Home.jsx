@@ -64,7 +64,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <Header cartCount={cartItems.length} />
+      <Header cartCount={cartItems.length} onCartClick={() => setIsCartOpen(true)} />
       <div className='main-content'>
         <Sidebar 
           onCategoryChange={handleCategoryChange}

@@ -7,12 +7,15 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "postinstall": "node -e \"const fs=require('fs');const p='public/index.html';fs.mkdirSync('public',{recursive:true});if(!fs.existsSync(p)){fs.writeFileSync(p,'<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n  <head>\\n    <meta charset=\\\"utf-8\\\" />\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\" />\\n    <meta name=\\\"theme-color\\\" content=\\\"#000000\\\" />\\n    <meta name=\\\"description\\\" content=\\\"Web site created using create-react-app\\\" />\\n    <title>React App</title>\\n  </head>\\n  <body>\\n    <noscript>You need to enable JavaScript to run this app.</noscript>\\n    <div id=\\\"root\\\"></div>\\n  </body>\\n</html>\\n','utf8')}\"",
+    "prestart": "npm run postinstall",
+    "prebuild": "npm run postinstall",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

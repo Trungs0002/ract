@@ -4,7 +4,7 @@ import './ProductList.css';
 const ProductList = ({ products, onAddToCart }) => {
   return (
     <div className="product-list">
-      <h2>Our Products</h2>
+      <h2>Store</h2>
       <div className="products-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card">

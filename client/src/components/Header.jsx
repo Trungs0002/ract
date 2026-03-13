@@ -1,23 +1,24 @@
 import React from 'react';
 import './Header.css';
 
-const Header = ({ cartCount, onCartClick }) => {
+const Header = ({ searchQuery, onSearchChange }) => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
-          <h1><span className="logo-icon" aria-hidden="true">&#10022;</span> TStore</h1>
+        <a href="/" className="logo">
+          <span className="logo-icon" aria-hidden="true">&#10022;</span>
+          <span className="logo-name">TStore</span>
+        </a>
+        <div className="search-bar">
+          <span className="search-icon" aria-hidden="true">&#128269;</span>
+          <input
+            type="text"
+            placeholder="Tìm kiếm sản phẩm..."
+            value={searchQuery || ''}
+            onChange={e => onSearchChange && onSearchChange(e.target.value)}
+            aria-label="Tìm kiếm sản phẩm"
+          />
         </div>
-        <nav className="nav-menu">
-          <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button className="cart-icon" type="button" onClick={onCartClick} aria-label="Open cart">
-          <span className="cart-symbol" aria-hidden="true">&#128722;</span>
-          <span className="cart-count">{cartCount}</span>
-        </button>
       </div>
     </header>
   );

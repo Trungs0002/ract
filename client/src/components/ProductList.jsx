@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductList.css';
 
 const ProductList = ({ products, onAddToCart }) => {
@@ -12,7 +13,9 @@ const ProductList = ({ products, onAddToCart }) => {
               <img src={product.image} alt={product.name} />
             </div>
             <div className="product-info">
-              <h3>{product.name}</h3>
+              <Link to={`/products/${product.id}`} className="product-link">
+                <h3>{product.name}</h3>
+              </Link>
               <p className="product-description">{product.description}</p>
               <p className="product-category">{product.category}</p>
               <div className="product-footer">

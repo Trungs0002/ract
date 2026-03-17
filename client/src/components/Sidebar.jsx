@@ -1,30 +1,32 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 
-const Sidebar = ({ onCategoryChange, selectedCategory }) => {
-  const categories = ['All', 'Electronics', 'Clothing', 'Shoes'];
+const Sidebar = () => {
+  const navItems = [
+    { label: 'Home', to: '/home' },
+    { label: 'Products', to: '/products' },
+    { label: 'About', to: '/about' },
+    { label: 'Cart', to: '/cart' }
+  ];
 
   return (
     <aside className="sidebar">
-      <h3>Categories</h3>
-      <ul className="category-list">
-        {categories.map((category) => (
-          <li
-            key={category}
-            className={selectedCategory === category ? 'active' : ''}
-            onClick={() => onCategoryChange(category)}
-          >
-            {category}
+      <h3>Navigation</h3>
+      <ul className="route-list">
+        {navItems.map((item) => (
+          <li key={item.to}>
+            <NavLink
+              to={item.to}
+              className={({ isActive }) =>
+                `route-link${isActive ? ' active' : ''}`
+              }
+            >
+              {item.label}
+            </NavLink>
           </li>
         ))}
       </ul>
-      <div className="sidebar-filters">
-        <h3>Price Range</h3>
-        <div className="price-filter">
-          <input type="range" min="0" max="2000" />
-          <p>$0 - $2000</p>
-        </div>
-      </div>
     </aside>
   );
 };

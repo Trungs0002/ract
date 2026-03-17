@@ -45,10 +45,18 @@
   padding: 1rem;
 }
 
+.product-link {
+  text-decoration: none;
+}
+
 .product-info h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: #2c3e50;
+}
+
+.product-link:hover h3 {
+  color: #3498db;
 }
 
 .product-description {

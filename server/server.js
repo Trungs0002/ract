@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const products = require('./data/products');
+const { connectToDb } = require('./db/connection');
 
 const app = express();
 const port = 5000;
@@ -24,6 +25,16 @@ app.get('/get/data', (req, res) => {
 
 app.get('/products/json', (req, res) => {
 	res.json(products);
+});
+
+app.get('/cars', async (req, res) => {
+	try {
+		const db = await connectToDb();
+		const cars = await db.collection('car').find({}).toArray();
+		res.json(cars);
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+	}
 });
 
 app.listen(port, () => {

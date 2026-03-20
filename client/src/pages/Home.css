@@ -4,5 +4,31 @@
 
 .main-content {
   width: 100%;
-  padding: 0;
+  padding: 12px;
+}
+
+.cars-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.car-item {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.car-item h3 {
+  margin: 0 0 8px;
+}
+
+.car-item p {
+  margin: 4px 0;
+}
+
+.error-text {
+  color: #b00020;
 }
